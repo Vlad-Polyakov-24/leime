@@ -15,7 +15,7 @@ const CardImage = (props: CardImageProps) => {
 	const [loading, setLoading] = useState(true);
 
 	return (
-		<div className={classNames('relative w-full h-[200px]', {}, [className])}>
+		<div className={classNames('relative w-full h-[400px] sm:h-[200px]', {}, [className])}>
 			{loading && <Loader absolute />}
 			<Image
 				priority
