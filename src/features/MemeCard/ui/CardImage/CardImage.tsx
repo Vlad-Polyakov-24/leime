@@ -27,6 +27,7 @@ const CardImage = (props: CardImageProps) => {
 				sizes={'(max-width: 768px) 100vw, 33vw'}
 				onClick={openGallery}
 				onLoad={() => setLoading(false)}
+				onError={() => setLoading(false)}
 			/>
 		</div>
 	);

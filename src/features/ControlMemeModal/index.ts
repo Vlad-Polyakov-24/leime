@@ -1,0 +1,1 @@
+export { default as ControlMemeModal } from './ui/ControlMemeModal';

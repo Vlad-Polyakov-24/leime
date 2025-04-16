@@ -1,24 +1,24 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from '@heroui/modal';
-import { EditMemeForm, type IMeme } from '@entities/Meme';
+import { ControlMemeForm, type IMeme } from '@entities/Meme';
 
-type EditMemeModalProps = {
+type ControlMemeModalProps = {
 	className?: string;
 	isOpen?: boolean;
 	onOpenChange?: ((isOpen: boolean) => void);
-	meme: IMeme;
+	meme?: IMeme | null;
 };
 
-const EditMemeModal = (props: EditMemeModalProps) => {
+const ControlMemeModal = (props: ControlMemeModalProps) => {
 	const { className, isOpen, onOpenChange, meme } = props;
 
 	return (
 		<Modal isOpen={isOpen} onOpenChange={onOpenChange} className={className}>
-			<ModalContent>
+			<ModalContent className={'relative'}>
 				{(onClose) => (
 					<>
 						<ModalHeader className={'flex flex-col gap-1'}>Edit meme</ModalHeader>
 						<ModalBody>
-							<EditMemeForm meme={meme} closeModal={onClose} />
+							<ControlMemeForm meme={meme} closeModal={onClose} />
 						</ModalBody>
 					</>
 				)}
@@ -27,4 +27,4 @@ const EditMemeModal = (props: EditMemeModalProps) => {
 	);
 };
 
-export default EditMemeModal;
+export default ControlMemeModal;

@@ -21,8 +21,8 @@ const SectionIntro = ({ className }: SectionIntroProps) => {
 			<section className={classNames('pt-5 pb-5 flex-grow', {}, [className])}>
 				<Container>
 					<ul className={'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'}>
-						{memes?.sort((a, b) => a.id - b.id).map((meme, i) => (
-							<MemeCard key={meme.id} meme={meme} openGallery={() => setSlideIndex(i)}/>
+						{memes?.sort((a, b) => a.title.localeCompare(b.title)).map((meme, i) => (
+							<MemeCard key={meme.id} meme={meme} openGallery={() => setSlideIndex(i)} />
 						))}
 					</ul>
 				</Container>

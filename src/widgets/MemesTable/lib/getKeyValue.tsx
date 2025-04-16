@@ -1,17 +1,33 @@
 import { Button } from '@heroui/react';
+import { Icon, IconSize } from '@shared/ui/Icon';
 import { type IMeme, MemeFields } from '@entities/Meme';
+import TrashIcon from '@shared/assets/icons/trash.svg';
 
 interface IProps {
 	meme: IMeme;
 	key: string | number;
 	handleEdit: () => void;
+	handleDelete: () => void;
 }
 
 export const getKeyValue = (props: IProps) => {
-	const { meme, key, handleEdit } = props;
+	const { meme, key, handleEdit, handleDelete } = props;
 
 	if (key === 'actions') {
-		return <Button size={'sm'} variant={'ghost'} onPress={handleEdit}>Edit</Button>;
+		return (
+			<div className={'flex items-center gap-2'}>
+				<Button size={'sm'} variant={'ghost'} onPress={handleEdit}>Edit</Button>
+				<Button
+					isIconOnly
+					size={'sm'}
+					aria-label={'Trash'}
+					color={'danger'}
+					onPress={handleDelete}
+				>
+					<Icon icon={<TrashIcon />} size={IconSize.SIZE_16} />
+				</Button>
+			</div>
+		);
 	}
 
 	if (key === MemeFields.IMAGE) {

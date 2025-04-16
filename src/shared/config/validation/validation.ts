@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const editMemeSchema = yup.object({
+export const formMemeSchema = yup.object({
 	title: yup.string().max(32, 'Max length is 32 symbols').required('Title is required'),
 	image: yup.string().url('Must be a valid URL').required('Image URL is required'),
 	likes: yup

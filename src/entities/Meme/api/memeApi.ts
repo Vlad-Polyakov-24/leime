@@ -27,4 +27,27 @@ export const memeApi = {
 
 		return data;
 	},
+	createMeme: async (meme: Omit<IMeme, MemeFields.ID>) => {
+		const { data, error } = await supabase
+			.from(supabaseTables.MEMES)
+			.insert(meme)
+			.select()
+			.single();
+
+		if (error) {
+			throw new Error(error.message);
+		}
+
+		return data;
+	},
+	deleteMeme: async (id: number) => {
+		const { error } = await supabase
+			.from(supabaseTables.MEMES)
+			.delete()
+			.eq('id', id);
+
+		if (error) {
+			throw new Error(error.message);
+		}
+	},
 };
