@@ -14,7 +14,7 @@ const NavMobile = ({ className, onClose }: NavMobileProps) => {
 
 	return (
 		<NavbarMenu className={classNames('pt-4', {}, [className])}>
-			{navLinks.map(({ link, label }, index) => (
+			{navLinks.map(({ link, label }) => (
 				<NavbarMenuItem key={label} isActive={pathname === link}>
 					<Link
 						href={link}
