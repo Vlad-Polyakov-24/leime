@@ -1,0 +1,1 @@
+export { default as EditMemeModal } from './ui/EditMemeModal';

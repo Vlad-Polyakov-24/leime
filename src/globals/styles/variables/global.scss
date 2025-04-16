@@ -1,0 +1,58 @@
+@use '../breakpoints';
+
+:root {
+
+  // colors
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-blue: #335BFF;
+  --color-overlay: rgba(0, 0, 0, .6);
+
+  --color-primary-bg: #fff;
+
+  // shadows
+
+  --shadow-primary: 0 6px 10px 0 rgba(0, 0, 70, .2);
+
+  // border radius
+
+  --primary-border-radius: 24px;
+  --secondary-border-radius: 12px;
+
+  // transitions
+
+  --transition-primary: .2s ease;
+
+  // fonts
+
+  --font-size-xs: 12px;
+  --font-line-xs: 16px;
+
+  --font-size-s: 14px;
+  --font-line-s: 18px;
+
+  --font-size-m: 16px;
+  --font-line-m: 20px;
+
+  --font-size-l: 24px;
+  --font-line-l: 30px;
+
+  --font-size-xl: 34px;
+  --font-line-xl: 40px;
+
+  --font-size-xxl: 50px;
+  --font-line-xxl: 70px;
+
+  --font-size-xxxl: 62px;
+  --font-line-xxxl: 84px;
+
+  // container
+
+  --container-width: 1140px;
+  --container-gap: 20px;
+
+  // mobile
+
+  @media (width < breakpoints.$sm) {}
+}
