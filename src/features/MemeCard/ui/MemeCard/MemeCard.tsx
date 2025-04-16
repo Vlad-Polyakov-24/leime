@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import { Card, CardBody, CardHeader } from '@heroui/card';
 import { classNames } from '@shared/lib/classNames';
+import { CardImage } from '../CardImage/CardImage';
 import { MemeLikes } from '../MemeLikes/MemeLikes';
 import type { IMeme } from '@entities/Meme';
 
@@ -19,16 +19,7 @@ const MemeCard = (props: MemeCardProps) => {
 				<h3 className={'font-bold text-large'}>{title}</h3>
 			</CardHeader>
 			<CardBody className={'overflow-visible p-0 gap-2'}>
-				<Image
-					priority
-					alt={title}
-					className={'object-cover rounded-xl w-full h-[200px] transition-shadow duration-200 cursor-pointer hover:drop-shadow-lg'}
-					src={image}
-					width={0}
-					height={0}
-					sizes={'(max-width: 768px) 100vw, 33vw'}
-					onClick={openGallery}
-				/>
+				<CardImage src={image} alt={title} openGallery={openGallery} />
 				<MemeLikes id={id} likes={likes} />
 			</CardBody>
 		</Card>
