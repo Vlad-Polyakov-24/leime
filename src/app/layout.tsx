@@ -16,28 +16,28 @@ const roboto = Roboto({
 export const metadata: Metadata = {
 	title: 'LEIME',
 	description: 'Developed by Vlad Poliakov',
+	icons: {
+		icon: '/favicon.ico',
+	},
 };
 
 interface IRootLayout {
 	children: ReactNode;
 }
 
-const RootLayout = async ({ children }: IRootLayout) => {
-
-	return (
-		<html lang={'en'}>
-		<body className={roboto.variable}>
-		<HeroUIProvider>
-			<ErrorBoundary>
-				<ReactQueryProvider>
-					{children}
-					<ToastContainer />
-				</ReactQueryProvider>
-			</ErrorBoundary>
-		</HeroUIProvider>
-		</body>
-		</html>
-	);
-};
+const RootLayout = async ({ children }: IRootLayout) => (
+	<html lang={'en'}>
+	<body className={roboto.variable}>
+	<HeroUIProvider>
+		<ErrorBoundary>
+			<ReactQueryProvider>
+				{children}
+				<ToastContainer />
+			</ReactQueryProvider>
+		</ErrorBoundary>
+	</HeroUIProvider>
+	</body>
+	</html>
+);
 
 export default RootLayout;

@@ -3,5 +3,23 @@
 		font-size: var(--font-size-l);
 		line-height: var(--font-line-l);
 		text-align: center;
+
+		+ .intro__link {
+			margin-top: 10px;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: max-content;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media (hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
